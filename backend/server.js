@@ -3,13 +3,16 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
+import perangkatProvinsiRoutes from './routes/perangkatProvinsiRoutes.js';
 import bapRoutes from './routes/bapRoutes.js'; 
+import monitoringProvinsiRoutes from './routes/monitoringProvinsiRoutes.js';
 
 dotenv.config();
 const app = express();
 
 app.use(cors()); 
 app.use(express.json()); 
+
 
 // --- RUTE LOGIN GLOBAL ---
 app.post('/api/login', (req, res) => {
@@ -27,6 +30,8 @@ app.post('/api/login', (req, res) => {
 
 // --- ROUTER SPREADSHEET BAP ---
 app.use('/api/bap', bapRoutes);
+app.use('/api/monitoring/provinsi', monitoringProvinsiRoutes);
+app.use('/api/perangkat/provinsi',perangkatProvinsiRoutes);
 
 app.get('/', (req, res) => {
   res.send('Server Backend BASTP berjalan dengan baik di Vercel 🚀');

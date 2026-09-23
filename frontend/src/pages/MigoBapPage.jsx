@@ -125,7 +125,9 @@ export default function MigoBapPage() {
     }
   };
 
+  
   return (
+    
     <div style={{ padding: '30px', maxWidth: '950px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
       
       {/* 🔍 KOTAK PENCARIAN NOMOR AR */}
