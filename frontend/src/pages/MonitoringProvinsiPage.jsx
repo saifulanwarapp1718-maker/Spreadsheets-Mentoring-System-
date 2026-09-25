@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 
 import BASE_URL from '../utils/api';
-
+const PROVINSI_BASE_URL = "https://backendproject-silk.vercel.app";
 const ROWS_PER_PAGE = 15;
 
 export default function MonitoringProvinsiPage() {
@@ -50,7 +50,7 @@ export default function MonitoringProvinsiPage() {
     try {
 
       const response = await fetch(
-        `${BASE_URL}/api/monitoring/provinsi`
+        `${PROVINSI_BASE_URL}/api/monitoring/provinsi`
       );
 
       const result = await response.json();
